@@ -15,15 +15,18 @@ directory on `sys.path` to import them.
 | `technical-prose` | write and revise document text: direct, said once, quantitative; signs of padding and unvetted generated text (portable) |
 | `latex-audit` | review a LaTeX memo, paper or proposal and report its problems without editing (portable) |
 | `latex-page-fit` | bring a LaTeX document within a page limit without losing content or breaking format rules (portable) |
-| `latex-memo` | build and edit this repo's memos: tectonic, `make_figures.py` → `numbers.tex`, figure rules (specred) |
-| `memo-rebuild` | change a memo and regenerate its figures, numbers and PDF with clean provenance |
+| `latex-memo` | write, change and rebuild a living memo: one products script, numbers as macros, provenance, branch → build → checks → merge (portable; project settings in `AGENTS.md` § Memos) |
 
 ## Recent changes
 
-- 2026-10-08: installed in specred. Moved `latex-memo` here from
-  `.claude/skills`, linked `.claude/skills` and `.agents/skills` to this
-  directory, and added `AGENTS.md` § Skills and § Memos. `latex-memo` now
-  points to the 21cm and prose skills and runs `latex_audit.py`.
+- 2026-10-08: installed in specred. `.claude/skills` and `.agents/skills`
+  link here. `memo-rebuild` was EIGSEP-specific (paths, campaign variables,
+  `make_products.py`, pdflatex), so its steps are now the portable `latex-memo`
+  (which absorbed specred's memo build and figure rules), and project settings
+  go in `AGENTS.md` § Memos. `latex-memo` adds: memo numbering, a provenance
+  record that includes separately versioned packages, and a check for running
+  jobs before moving a memo directory. `latex-audit` now points to
+  `latex-memo`.
 
 - 2026-10-07: rules and tools carried over from the BLOOM-21cm SMEX proposal.
   New `technical-prose`, `latex-audit` (with `latex_audit.py`) and

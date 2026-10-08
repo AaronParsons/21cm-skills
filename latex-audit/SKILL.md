@@ -55,7 +55,7 @@ to confirm. Don't list what passes, and don't list strengths.
    from the document itself and its latest amendment or Q&A, which overrides
    it. Never from a cached checklist or summary: requirement numbers and limits
    in those drift. Audit each requirement and record the ones that fail. For a
-   memo, the requirements are `AGENTS.md` § Memos and `memo-rebuild`.
+   memo, the requirements are `latex-memo` and `AGENTS.md` § Memos.
 
 7. **Read for prose** with `technical-prose` (`--style` lists phrases to
    reread). Look for text carried over from another document: another
