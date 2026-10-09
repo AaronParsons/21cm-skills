@@ -19,6 +19,10 @@ directory on `sys.path` to import them.
 
 ## Recent changes
 
+- 2026-10-09: `21cm-analysis` adds "show that a null differs from the model
+  before scoring against it". Three nulls for a HERA coupling fit (delay sign
+  flip, delay permutation, 60° rotation) reproduced the predicted signal
+  because of the array's symmetry.
 - 2026-10-08: installed in specred. `.claude/skills` and `.agents/skills`
   link here. `memo-rebuild` was EIGSEP-specific (paths, campaign variables,
   `make_products.py`, pdflatex), so its steps are now the portable `latex-memo`

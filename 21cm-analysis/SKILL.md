@@ -92,6 +92,13 @@ the rules themselves carry no project specifics.
   - a fitted parameter compared with itself;
   - a confirmation that reuses the data it confirms;
   - a quantity checked against the same epoch it depends on.
+- **Show that a null differs from the model before scoring against it.** A
+  null with the model's freedom but the wrong structure is the right control,
+  but a symmetric instrument can make it reproduce the model: on a centrally or
+  rotationally symmetric array, flipping signs, rotating or permuting a
+  geometric quantity can map the predicted signal onto itself. Measure, in the
+  observable's own coordinates, how much of the null's power lands where the
+  model's does, and change the null until it is clearly elsewhere.
 - **Name the scope.** State the window, era, regime, channel range or file set
   a number comes from. Check a second, disjoint sample before stating it
   generally.
