@@ -1,6 +1,6 @@
 """Tests for flag_cover.py.  Run from the repo root:
 
-    python -m pytest skills/spectral-analysis/scripts/test_flag_cover.py
+    python -m pytest <skills>/spectral-analysis/scripts/test_flag_cover.py
 """
 import itertools
 import sys

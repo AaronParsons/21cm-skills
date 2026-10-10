@@ -13,7 +13,7 @@ source, read the value in points from the log, and divide by 72.27.
 
 Usage, from a script outside this directory::
 
-    sys.path.insert(0, "<repo>/skills/21cm-figures/scripts")
+    sys.path.insert(0, "<skills>/21cm-figures/scripts")
     from print_fonts import rescale_fonts_for_print
     ...
     rescale_fonts_for_print(fig, display_width_in=0.9 * TEXTWIDTH_IN, min_print_pt=8)
