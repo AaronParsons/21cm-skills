@@ -11,6 +11,7 @@ directory on `sys.path` to import them.
 | Skill | Use it to |
 |---|---|
 | `21cm-analysis` | reduce data and make claims: weighted means, radiometer noise, model comparison, simulations, validation, scope (portable) |
+| `spectral-analysis` | compute delay, fringe-rate and other transforms of flagged data: windows and sidelobes, edge ringing, leakage from flag gaps, scattering by a varying mask, broadcasting flags to reuse one DPSS filter (portable) |
 | `21cm-figures` | make figures: axes, scales, colour maps, model-comparison panels, waterfalls, printed text size, captions (portable) |
 | `technical-prose` | write and revise document text: direct, said once, quantitative; signs of padding and unvetted generated text (portable) |
 | `latex-audit` | review a LaTeX memo, paper or proposal and report its problems without editing (portable) |
@@ -19,6 +20,11 @@ directory on `sys.path` to import them.
 
 ## Recent changes
 
+- 2026-10-10: new `spectral-analysis`. Windows and sidelobe levels, ringing from
+  FFT-domain masks, flag gaps as holes in the window, scattering of bright
+  power by a mask that varies along the fitted axis, and broadcasting flags so
+  one DPSS filter is reused across an axis; with a four-step check for faint
+  features.
 - 2026-10-09: `21cm-analysis` adds "show that a null differs from the model
   before scoring against it". Three nulls for a HERA coupling fit (delay sign
   flip, delay permutation, 60° rotation) reproduced the predicted signal
