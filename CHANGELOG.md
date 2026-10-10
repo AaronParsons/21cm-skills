@@ -1,5 +1,9 @@
 # Changelog
 
+- 2026-10-10: `latex-memo` restores "use one version of each input", with its
+  step-6 check (search the script for superseded version strings). It was added
+  in the EIGSEP copy after the move and was missing here. The `<skills>` note
+  now follows the list of project settings instead of splitting it.
 - 2026-10-10: moved out of the specred workspace into its own repository, with
   history. Added `install.py` (Claude Code, Codex and Antigravity; project or
   user scope; copies record their commit and are protected from overwriting
