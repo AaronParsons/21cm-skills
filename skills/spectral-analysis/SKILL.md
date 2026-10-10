@@ -9,6 +9,8 @@ These rules go with `21cm-analysis` (noise, weights, validation) and
 `21cm-figures` (how to plot the result). Each rule is an imperative with its
 reason.
 
+(`<skills>` is the directory this skill is installed in: its parent, e.g. `.claude/skills`, `.agents/skills` or a plugin's `skills/`.)
+
 The common failure is the same in every form: the transform of the window,
 the mask or the filter is convolved with the bright part of the data and
 spreads it to where faint signals are sought. With a bright core 10⁵–10⁶
@@ -96,7 +98,7 @@ the filter axis last (e.g. frequency for a delay filter); every other index is
 a slice (time, baseline, ...).
 
 ```python
-import sys; sys.path.insert(0, "skills/spectral-analysis/scripts")
+import sys; sys.path.insert(0, "<skills>/spectral-analysis/scripts")
 from flag_cover import separable_cover, pattern_cover, FilterBank
 
 rows, cols = separable_cover(flags2d)          # whole rows + whole columns
@@ -126,7 +128,7 @@ resid = bank.residual(data)                    # NaN wherever the cover flags
   per mask. Every slice sharing a mask gets the identical filter, and the cost
   is K solves instead of one per slice. Weights must be the same for all
   slices that share a mask.
-- Tests: `python -m pytest skills/spectral-analysis/scripts/test_flag_cover.py`.
+- Tests: `python -m pytest <skills>/spectral-analysis/scripts/test_flag_cover.py`.
 
 ## Checking a faint feature
 

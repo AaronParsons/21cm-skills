@@ -1,0 +1,12 @@
+{
+  "name": "21cm-figures",
+  "description": "Conventions for figures of radio and 21-cm cosmology data (axes, scales, colour maps, model comparisons, waterfalls, captions). Read before making or revising any plot or figure, in a memo, notebook, PR or conversation.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}

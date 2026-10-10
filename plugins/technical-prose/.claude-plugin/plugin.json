@@ -1,0 +1,12 @@
+{
+  "name": "technical-prose",
+  "description": "Rules for writing and revising technical prose (memos, papers, proposals, READMEs, captions) so it is direct, quantitative and checkable, and for spotting padding and unvetted generated text. Read before drafting or revising any document text, and when tightening text to fit a limit.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}

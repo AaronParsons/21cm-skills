@@ -10,6 +10,8 @@ person or an agent, and to editing either. Shortening text must keep every
 claim, qualifier, number and citation; `latex-page-fit` has the procedure
 for fitting a limit.
 
+(`<skills>` is the directory this skill is installed in: its parent, e.g. `.claude/skills`, `.agents/skills` or a plugin's `skills/`.)
+
 ## Say it directly
 
 - **State the claim, not that you are about to.** Cut throat-clearing: "It is
@@ -56,7 +58,7 @@ for fitting a limit.
 
 When revising, reread any sentence that has one of these. They don't prove
 anything; they mark where the text may say less than it seems to.
-`skills/latex-audit/scripts/latex_audit.py --style` lists most of the phrases.
+`<skills>/latex-audit/scripts/latex_audit.py --style` lists most of the phrases.
 
 - **Promotional verbs and adjectives:** delve, seamless, a testament to,
   shatters, revolutionises, groundbreaking, unprecedented, pivotal, cutting-edge,

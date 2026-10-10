@@ -1,0 +1,104 @@
+{
+  "name": "21cm-skills",
+  "interface": {
+    "displayName": "21cm skills"
+  },
+  "plugins": [
+    {
+      "name": "all",
+      "source": {
+        "source": "local",
+        "path": "./plugins/all"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "21cm-analysis",
+      "source": {
+        "source": "local",
+        "path": "./plugins/21cm-analysis"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "21cm-figures",
+      "source": {
+        "source": "local",
+        "path": "./plugins/21cm-figures"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "latex-audit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/latex-audit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "latex-memo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/latex-memo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "latex-page-fit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/latex-page-fit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "spectral-analysis",
+      "source": {
+        "source": "local",
+        "path": "./plugins/spectral-analysis"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "technical-prose",
+      "source": {
+        "source": "local",
+        "path": "./plugins/technical-prose"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

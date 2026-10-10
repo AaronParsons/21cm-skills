@@ -1,0 +1,12 @@
+{
+  "name": "latex-page-fit",
+  "description": "Bring a LaTeX document (proposal, paper, abstract) within a page or word limit without losing content or breaking format rules. Use when a document or one of its sections is over its limit, or to tighten one that is close.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}

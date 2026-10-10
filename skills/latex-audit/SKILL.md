@@ -9,6 +9,8 @@ An audit finds problems; it doesn't fix them. Don't edit the document during
 one. Report only what is wrong, at risk, or needs someone outside the session
 to confirm. Don't list what passes, and don't list strengths.
 
+(`<skills>` is the directory this skill is installed in: its parent, e.g. `.claude/skills`, `.agents/skills` or a plugin's `skills/`.)
+
 ## Steps
 
 1. **Build it, then audit the built document.** Audit what the reader gets: a
@@ -17,7 +19,7 @@ to confirm. Don't list what passes, and don't list strengths.
 
 2. **Run the mechanical checks:**
 
-       python skills/latex-audit/scripts/latex_audit.py main.tex \
+       python <skills>/latex-audit/scripts/latex_audit.py main.tex \
            [--generated <dir of generated .tex/.csv>] [--cite-context] [--style]
 
    It follows the `\input` tree from the main file and reports placeholders,
@@ -45,7 +47,7 @@ to confirm. Don't list what passes, and don't list strengths.
      slope).
 
 5. **Check figures at printed size:**
-   - `skills/21cm-figures/scripts/pdf_min_font.py` on the built PDF for the
+   - `<skills>/21cm-figures/scripts/pdf_min_font.py` on the built PDF for the
      smallest text;
    - the rest of the `21cm-figures` checks by eye on the page.
 

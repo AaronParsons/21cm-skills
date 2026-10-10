@@ -10,6 +10,8 @@ documents that run over carry repetition and wordy phrasing; remove those
 before anything that carries information. `technical-prose` has the wording
 rules; this skill has the procedure and the format guardrails.
 
+(`<skills>` is the directory this skill is installed in: its parent, e.g. `.claude/skills`, `.agents/skills` or a plugin's `skills/`.)
+
 ## Guardrails
 
 These hold for every edit and are checked again at the end.
@@ -35,7 +37,7 @@ These hold for every edit and are checked again at the end.
   crosses the text block; an overfull box is a failure to fix, not to accept.
 - **Scale a figure by at most 10%,** and only if every label, tick and legend
   still meets the minimum font size on the printed page (`21cm-figures`,
-  `scripts/pdf_min_font.py`). Don't merge or regroup the author's figures;
+  `<skills>/21cm-figures/scripts/pdf_min_font.py`). Don't merge or regroup the author's figures;
   suggest it in the report instead.
 - **Spacing around floats, captions, headings, lists and equations** may be
   reduced a little at a time while the parts stay clearly separated. There is
@@ -54,7 +56,7 @@ These hold for every edit and are checked again at the end.
    few words costs a full line; shortening it by a few words saves that line.
    Find them in the rendered PDF, not the source:
 
-       python skills/latex-page-fit/scripts/pdf_short_lines.py main.pdf --pages 12-27 --json
+       python <skills>/latex-page-fit/scripts/pdf_short_lines.py main.pdf --pages 12-27 --json
 
    For each candidate the script gives the last two printed lines and roughly
    how much width must be recovered. Look at each one on the page and drop
@@ -89,7 +91,7 @@ These hold for every edit and are checked again at the end.
    - section lengths against the limits;
    - `pdf_short_lines.py` again on the same pages: mark each target resolved,
      still short, moved, or new;
-   - `skills/latex-audit/scripts/latex_audit.py`: no new overfull boxes,
+   - `<skills>/latex-audit/scripts/latex_audit.py`: no new overfull boxes,
      undefined references or placeholders;
    - minimum font sizes on changed pages, including figures;
    - every required element still present, and nothing unique lost (compare

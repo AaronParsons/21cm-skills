@@ -1,0 +1,51 @@
+{
+  "name": "21cm-skills",
+  "owner": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "description": "Rules and tools for 21-cm and radio data analysis, figures, spectral analysis and technical writing, as Agent Skills.",
+  "plugins": [
+    {
+      "name": "all",
+      "source": "./plugins/all",
+      "description": "Every skill in this marketplace."
+    },
+    {
+      "name": "21cm-analysis",
+      "source": "./plugins/21cm-analysis",
+      "description": "Rules for reducing radio and 21-cm cosmology data and for claiming anything from it (averaging, noise, coordinates, model comparison, validation, scope). Read before analysing data, fitting or validating a model or method, or stating a result."
+    },
+    {
+      "name": "21cm-figures",
+      "source": "./plugins/21cm-figures",
+      "description": "Conventions for figures of radio and 21-cm cosmology data (axes, scales, colour maps, model comparisons, waterfalls, captions). Read before making or revising any plot or figure, in a memo, notebook, PR or conversation."
+    },
+    {
+      "name": "latex-audit",
+      "source": "./plugins/latex-audit",
+      "description": "Review a LaTeX document (memo, paper, proposal) for what a reader, referee or reviewer would trip on, and report the problems without editing. Use when asked to review, audit or check a document before it is circulated, submitted or merged."
+    },
+    {
+      "name": "latex-memo",
+      "source": "./plugins/latex-memo",
+      "description": "Write, change and rebuild a living LaTeX memo (memos/memo-NNN-<topic>/) so that its figures, quoted numbers and PDF all regenerate from one script, with clean provenance. Use when creating a memo, editing its text or products script, or when an input it reads changes."
+    },
+    {
+      "name": "latex-page-fit",
+      "source": "./plugins/latex-page-fit",
+      "description": "Bring a LaTeX document (proposal, paper, abstract) within a page or word limit without losing content or breaking format rules. Use when a document or one of its sections is over its limit, or to tighten one that is close."
+    },
+    {
+      "name": "spectral-analysis",
+      "source": "./plugins/spectral-analysis",
+      "description": "Rules and tools for delay, fringe-rate and other Fourier or DPSS transforms of gridded, flagged data, covering windowing, sidelobes, edge ringing, leakage from flag gaps, power scattered by a sample-varying mask, and broadcasting flags. Includes flag_cover.py, which covers a flag mask with a few shapes so a few DPSS filters serve every slice. Read before computing or interpreting a delay spectrum, fringe-rate spectrum, delay \u00d7 fringe-rate map, or any filter or projection along a data axis."
+    },
+    {
+      "name": "technical-prose",
+      "source": "./plugins/technical-prose",
+      "description": "Rules for writing and revising technical prose (memos, papers, proposals, READMEs, captions) so it is direct, quantitative and checkable, and for spotting padding and unvetted generated text. Read before drafting or revising any document text, and when tightening text to fit a limit."
+    }
+  ]
+}

@@ -8,6 +8,8 @@ description: Conventions for figures of radio and 21-cm cosmology data (axes, sc
 These rules go with `21cm-analysis`, whose rules on averaging and noise apply
 to every plotted quantity.
 
+(`<skills>` is the directory this skill is installed in: its parent, e.g. `.claude/skills`, `.agents/skills` or a plugin's `skills/`.)
+
 ## Axes and scales
 
 - **Plot in fundamental coordinates:** time, frequency, fringe rate, delay,
@@ -103,7 +105,7 @@ or PR. A caption:
   strings as matplotlib sets them with `scripts/textfit.py`. If text doesn't
   fit at the minimum size, change the box or the text, not the font.
 - **Check the smallest text in the built document,** not in the figure file:
-  `python skills/21cm-figures/scripts/pdf_min_font.py <doc>.pdf --below <pt>`.
+  `python <skills>/21cm-figures/scripts/pdf_min_font.py <doc>.pdf --below <pt>`.
   Where a minimum applies (a journal's or a solicitation's), every figure
   meets it at printed size. Text in raster images needs checking by eye.
 

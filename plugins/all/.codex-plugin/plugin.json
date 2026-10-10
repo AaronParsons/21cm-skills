@@ -1,0 +1,12 @@
+{
+  "name": "all",
+  "description": "All 7 skills: 21cm-analysis, 21cm-figures, latex-audit, latex-memo, latex-page-fit, spectral-analysis, technical-prose.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}

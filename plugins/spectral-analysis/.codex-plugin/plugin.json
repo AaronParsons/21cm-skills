@@ -1,0 +1,12 @@
+{
+  "name": "spectral-analysis",
+  "description": "Rules and tools for delay, fringe-rate and other Fourier or DPSS transforms of gridded, flagged data, covering windowing, sidelobes, edge ringing, leakage from flag gaps, power scattered by a sample-varying mask, and broadcasting flags. Includes flag_cover.py, which covers a flag mask with a few shapes so a few DPSS filters serve every slice. Read before computing or interpreting a delay spectrum, fringe-rate spectrum, delay \u00d7 fringe-rate map, or any filter or projection along a data axis.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}

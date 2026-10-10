@@ -1,0 +1,12 @@
+{
+  "name": "latex-memo",
+  "description": "Write, change and rebuild a living LaTeX memo (memos/memo-NNN-<topic>/) so that its figures, quoted numbers and PDF all regenerate from one script, with clean provenance. Use when creating a memo, editing its text or products script, or when an input it reads changes.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}

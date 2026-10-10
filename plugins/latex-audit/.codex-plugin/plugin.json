@@ -1,0 +1,12 @@
+{
+  "name": "latex-audit",
+  "description": "Review a LaTeX document (memo, paper, proposal) for what a reader, referee or reviewer would trip on, and report the problems without editing. Use when asked to review, audit or check a document before it is circulated, submitted or merged.",
+  "author": {
+    "name": "Aaron Parsons",
+    "email": "aparsons@berkeley.edu",
+    "url": "https://github.com/AaronParsons"
+  },
+  "homepage": "https://github.com/AaronParsons/21cm-skills",
+  "repository": "https://github.com/AaronParsons/21cm-skills",
+  "license": "MIT"
+}
