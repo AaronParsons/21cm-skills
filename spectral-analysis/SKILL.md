@@ -1,6 +1,6 @@
 ---
 name: spectral-analysis
-description: Rules for delay, fringe-rate and other Fourier or DPSS transforms of gridded, flagged data, covering windowing, sidelobes, edge ringing, leakage from flag gaps, power scattered by a sample-varying mask, and broadcasting flags so one DPSS filter serves a whole axis. Read before computing or interpreting a delay spectrum, fringe-rate spectrum, delay × fringe-rate map, or any filter or projection along a data axis.
+description: Rules and tools for delay, fringe-rate and other Fourier or DPSS transforms of gridded, flagged data, covering windowing, sidelobes, edge ringing, leakage from flag gaps, power scattered by a sample-varying mask, and broadcasting flags. Includes flag_cover.py, which covers a flag mask with a few shapes so a few DPSS filters serve every slice. Read before computing or interpreting a delay spectrum, fringe-rate spectrum, delay × fringe-rate map, or any filter or projection along a data axis.
 ---
 
 # Spectral analysis of flagged data
@@ -84,8 +84,49 @@ times the noise, a leak of 10⁻⁵ is a detection.
   slice to slice. Replace them with their mean along the axis for the test.
 - **Count what broadcasting costs.** Report the fraction of data dropped. It is
   usually small when bad samples cluster in a few channels or times. When it
-  is large, broadcast within blocks, or flag whole slices, rather than keep a
-  sample-varying mask.
+  is large, cover the flags with a few masks (see Tools) rather than keep a
+  sample-varying mask. Hundreds of distinct masks often reduce to fewer than
+  ten at under 1% extra flagging.
+
+## Tools: covering flags with a few shapes
+
+`scripts/flag_cover.py` (numpy and scipy only) finds masks that contain every
+flagged cell, so that a few filters serve every slice. Flags are boolean, with
+the filter axis last (e.g. frequency for a delay filter); every other index is
+a slice (time, baseline, ...).
+
+```python
+import sys; sys.path.insert(0, "skills/spectral-analysis/scripts")
+from flag_cover import separable_cover, pattern_cover, FilterBank
+
+rows, cols = separable_cover(flags2d)          # whole rows + whole columns
+cover = pattern_cover(flags, max_patterns=8, drop_frac=0.5)
+print(cover.summary())                         # masks, slices dropped, extra flagged
+bank = FilterBank(A, cover)                    # A: (nf, nmodes) DPSS basis
+model = bank.fit(data)                         # one projector per mask, reused
+resid = bank.residual(data)                    # NaN wherever the cover flags
+```
+
+- **Try the separable cover first.** It flags whole rows and columns, so one
+  filter serves each axis and 2-D fits stay separable. It is a minimum-weight
+  bipartite vertex cover, solved exactly by min-cut, for the additive cost
+  (row costs plus column costs). That counts a cell where a chosen row meets a
+  chosen column twice, so it overstates the loss when many rows and columns
+  are chosen.
+- **If it costs too much, use a few masks.** `pattern_cover` gives each slice
+  one of K masks that contains its own flags. The cover is a union of K outer
+  products: the slices assigned to mask k × mask k. It merges masks greedily,
+  always joining the pair that adds the fewest flagged cells. Stop at
+  `max_patterns` or at a budget `max_extra_frac`. Drop slices that are mostly
+  flagged (`drop_frac`) rather than give them their own masks.
+- **Report the cost.** `summary()` gives the masks, the dropped slices and the
+  extra flagged fraction. Quote the fraction with any result that uses the
+  cover.
+- **Build each filter once.** `FilterBank` computes one weighted DPSS projector
+  per mask. Every slice sharing a mask gets the identical filter, and the cost
+  is K solves instead of one per slice. Weights must be the same for all
+  slices that share a mask.
+- Tests: `python -m pytest skills/spectral-analysis/scripts/test_flag_cover.py`.
 
 ## Checking a faint feature
 

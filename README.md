@@ -11,7 +11,7 @@ directory on `sys.path` to import them.
 | Skill | Use it to |
 |---|---|
 | `21cm-analysis` | reduce data and make claims: weighted means, radiometer noise, model comparison, simulations, validation, scope (portable) |
-| `spectral-analysis` | compute delay, fringe-rate and other transforms of flagged data: windows and sidelobes, edge ringing, leakage from flag gaps, scattering by a varying mask, broadcasting flags to reuse one DPSS filter (portable) |
+| `spectral-analysis` | compute delay, fringe-rate and other transforms of flagged data: windows and sidelobes, edge ringing, leakage from flag gaps, scattering by a varying mask, broadcasting flags to reuse one DPSS filter; `flag_cover.py` covers a flag mask with a few shapes so a few DPSS filters serve every slice (portable) |
 | `21cm-figures` | make figures: axes, scales, colour maps, model-comparison panels, waterfalls, printed text size, captions (portable) |
 | `technical-prose` | write and revise document text: direct, said once, quantitative; signs of padding and unvetted generated text (portable) |
 | `latex-audit` | review a LaTeX memo, paper or proposal and report its problems without editing (portable) |
@@ -20,6 +20,11 @@ directory on `sys.path` to import them.
 
 ## Recent changes
 
+- 2026-10-10: `spectral-analysis` adds `scripts/flag_cover.py` (with tests).
+  It provides an exact separable row-and-column cover by min-cut, a greedy
+  cover with K masks, and `FilterBank`, which reuses one DPSS projector per
+  mask. On one native-resolution HERA file, 718 distinct masks reduce to 8 at
+  0.37% extra flagging.
 - 2026-10-10: new `spectral-analysis`. Windows and sidelobe levels, ringing from
   FFT-domain masks, flag gaps as holes in the window, scattering of bright
   power by a mask that varies along the fitted axis, and broadcasting flags so
