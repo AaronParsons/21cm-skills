@@ -45,6 +45,8 @@ Each memo is a directory `memos/memo-NNN-<topic>/` holding:
   (`.npz`, `.json`) sit in the memo directory, are committed, and are read by
   the products script.
 - Optional `README.md`: a file table, and dated lines under `## Recent changes`.
+- From the second release on, `memo-NNN-redline.pdf`: the text marked up
+  against the previous release (Redlines, below), committed beside the PDF.
 
 Number memos in order: the next unused three-digit number, never reused. A memo
 that is superseded keeps its number and says which memo replaces it.
@@ -152,18 +154,53 @@ So that the stamp is clean, commit the source before regenerating (step 4).
    - For a full review before circulating, follow `latex-audit`.
 
 7. **Commit the products** (figures, numbers, tables, PDF) as
-   `memo NNN: regenerate products at <source commit>`. Push the branch if there
-   is a hub. Report what changed, with the key numbers.
+   `memo NNN: regenerate products at <source commit>`. For every release but
+   the first, make the redline against the previous release in the same commit
+   (Redlines, below). Push the branch if there is a hub. Report what changed,
+   with the key numbers, and give the redline with the PDF.
 
 8. **Merge only on the owner's direct OK in the session.** If the main branch
    has not moved, fast-forward it, then remove the worktree and delete the
    branch. If it has moved:
    - merge the main branch into yours in the worktree;
-   - repeat steps 5–6 there;
+   - repeat steps 5–7 there, remaking the redline against the new main;
    - fast-forward main.
 
    Update a shared checkout only if it is on main, clean, and has no local
    commits. Otherwise leave it alone and say so.
+
+## Redlines
+
+Every release after the first publishes a redline beside the PDF, so a reader
+can see what changed without rereading the memo.
+
+- **The previous release** is the memo as last merged to the main branch:
+  `--base <hub>/main` on a release branch, after merging main in if it has
+  moved. If releases are tagged, use the previous tag. The first release has no
+  redline.
+- **Make it with the script,** after the products are regenerated and the
+  source is committed:
+  `python <skills>/latex-memo/scripts/redline.py <memo>/memo-NNN.tex --base <ref>`.
+  It takes the old source with `git show <ref>:<path>` and runs latexdiff
+  (`--type=UNDERLINE --subtype=SAFE`: additions underlined, deletions struck
+  through). It builds the result in a temporary copy of the memo directory, so
+  every figure, table and number is the new release's, and runs the TeX engine
+  twice. It puts a note under the title naming both commits and what the
+  markup leaves out, and writes `<memo>/memo-NNN-redline.pdf`. The redline's
+  `.tex` is not kept; the script regenerates it.
+- **latexdiff** is a Perl script, packaged with most TeX distributions. Where it
+  is missing, `--fetch <dir>` downloads the pinned release, checks its SHA-256
+  and runs its self-contained `latexdiff-so`. Put that directory outside the
+  repository.
+- **What it does not mark.** Only the main `.tex` is compared. Figures,
+  `\input` files (generated tables, the number macros) and new floats appear at
+  the new version without markup. A number typed in the old text and a macro in
+  the new one shows as old struck out beside new; a number that was a macro in
+  both shows its new value unmarked. Say so when the changed numbers matter, and
+  point to the `numbers.tex` diff.
+- **Check it** as you would the PDF: it builds without errors, and the changed
+  passages read correctly. Overfull boxes caused by the markup are acceptable;
+  the release PDF itself must have none.
 
 ## Figures
 

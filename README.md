@@ -15,7 +15,7 @@ description matches the task.
 | `technical-prose` | write and revise document text: direct, said once, quantitative; signs of padding and unvetted generated text | `latex-audit` |
 | `latex-audit` | review a LaTeX memo, paper or proposal and report its problems without editing | `21cm-figures` |
 | `latex-page-fit` | bring a LaTeX document within a page limit without losing content or breaking format rules | `latex-audit`, `21cm-figures` |
-| `latex-memo` | write, change and rebuild a living memo: one products script, numbers as macros, provenance, branch → build → checks → merge | `latex-audit`, `21cm-figures` |
+| `latex-memo` | write, change and rebuild a living memo: one products script, numbers as macros, provenance, branch → build → checks → redline → merge | `latex-audit`, `21cm-figures` |
 
 "Requires" are skills whose scripts a skill runs; every install method below
 brings them along. `skills.json` has the full index.

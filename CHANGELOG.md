@@ -1,5 +1,12 @@
 # Changelog
 
+- 2026-10-18: `latex-memo` requires a redline with every release after the
+  first, `memo-NNN-redline.pdf` beside the PDF, against the memo as last
+  merged to main. New `scripts/redline.py` (with tests) makes it: latexdiff
+  (`--type=UNDERLINE --subtype=SAFE`) of the old and new source, built in a
+  copy of the new memo directory, with a note naming both commits; `--fetch`
+  downloads a pinned latexdiff 1.3.4 and checks its SHA-256. The skill says
+  what the markup does not cover (figures, generated tables, number macros).
 - 2026-10-10: `latex-memo` restores "use one version of each input", with its
   step-6 check (search the script for superseded version strings). It was added
   in the EIGSEP copy after the move and was missing here. The `<skills>` note
