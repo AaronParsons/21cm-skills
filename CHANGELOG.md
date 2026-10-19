@@ -1,5 +1,8 @@
 # Changelog
 
+- 2026-10-19: `latex-memo` `scripts/redline.py` decodes the TeX engine's output with
+  `errors="replace"`. pdflatex wraps its terminal lines at a fixed byte count, which can
+  split a UTF-8 character, and the strict decode stopped the redline of a long memo.
 - 2026-10-18: `latex-memo` requires a redline with every release after the
   first, `memo-NNN-redline.pdf` beside the PDF, against the memo as last
   merged to main. New `scripts/redline.py` (with tests) makes it: latexdiff

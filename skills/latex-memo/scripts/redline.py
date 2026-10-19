@@ -119,8 +119,10 @@ def main():
         name = f"{tex.stem}-redline"
         (work / f"{name}.tex").write_text(insert_note(diff, note(old_rev, new_rev)))
         for _ in range(2):
+            # the engine wraps its terminal output at a fixed byte count, which can split a
+            # multi-byte UTF-8 character; only the "!" error lines are read from it
             r = subprocess.run([a.engine, "-interaction=nonstopmode", f"{name}.tex"], cwd=work,
-                               capture_output=True, text=True)
+                               capture_output=True, text=True, encoding="utf-8", errors="replace")
         errors = [l for l in r.stdout.splitlines() if l.startswith("!")]
         if errors or not (work / f"{name}.pdf").exists():
             raise SystemExit("redline did not build:\n" + "\n".join(errors[:10]))
